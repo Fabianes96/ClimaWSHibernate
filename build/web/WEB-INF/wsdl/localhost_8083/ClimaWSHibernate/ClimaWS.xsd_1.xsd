@@ -1,0 +1,69 @@
+<?xml version='1.0' encoding='UTF-8'?><!-- Published by JAX-WS RI (http://jax-ws.java.net). RI's version is Metro/2.3.2-b608 (trunk-7979; 2015-01-21T12:50:19+0000) JAXWS-RI/2.2.11-b150120.1832 JAXWS-API/2.2.12 JAXB-RI/2.2.12-b141219.1637 JAXB-API/2.2.13-b141020.1521 svn-revision#unknown. --><xs:schema xmlns:tns="http://service.udea.com/" xmlns:xs="http://www.w3.org/2001/XMLSchema" version="1.0" targetNamespace="http://service.udea.com/">
+
+<xs:element name="buscarRegistro" type="tns:buscarRegistro"/>
+
+<xs:element name="buscarRegistroResponse" type="tns:buscarRegistroResponse"/>
+
+<xs:element name="consultarRegistro" type="tns:consultarRegistro"/>
+
+<xs:element name="consultarRegistroResponse" type="tns:consultarRegistroResponse"/>
+
+<xs:element name="ingresarRegistro" type="tns:ingresarRegistro"/>
+
+<xs:element name="ingresarRegistroResponse" type="tns:ingresarRegistroResponse"/>
+
+<xs:complexType name="clima">
+<xs:sequence>
+<xs:element name="centigrados" type="xs:int"/>
+<xs:element name="ciudad" type="xs:string" minOccurs="0"/>
+<xs:element name="clima" type="xs:string" minOccurs="0"/>
+<xs:element name="codigo" type="xs:int" minOccurs="0"/>
+<xs:element name="fahrenheit" type="xs:int"/>
+<xs:element name="nubosidad" type="xs:int"/>
+<xs:element name="porcentajeHumedad" type="xs:int"/>
+<xs:element name="prediccion" type="xs:string" minOccurs="0"/>
+<xs:element name="probPrecipitacion" type="xs:int"/>
+</xs:sequence>
+</xs:complexType>
+
+<xs:complexType name="buscarRegistro">
+<xs:sequence>
+<xs:element name="codigo" type="xs:int"/>
+</xs:sequence>
+</xs:complexType>
+
+<xs:complexType name="buscarRegistroResponse">
+<xs:sequence>
+<xs:element name="return" type="xs:string" minOccurs="0"/>
+</xs:sequence>
+</xs:complexType>
+
+<xs:complexType name="ingresarRegistro">
+<xs:sequence>
+<xs:element name="ciudad" type="xs:string" minOccurs="0"/>
+<xs:element name="clima" type="xs:string" minOccurs="0"/>
+<xs:element name="centigrados" type="xs:int"/>
+<xs:element name="fahrenheit" type="xs:int"/>
+<xs:element name="nubosidad" type="xs:int"/>
+<xs:element name="porcentaje_humedad" type="xs:int"/>
+<xs:element name="prob_precipitacion" type="xs:int"/>
+<xs:element name="prediccion" type="xs:string" minOccurs="0"/>
+</xs:sequence>
+</xs:complexType>
+
+<xs:complexType name="ingresarRegistroResponse">
+<xs:sequence>
+<xs:element name="return" type="xs:string" minOccurs="0"/>
+</xs:sequence>
+</xs:complexType>
+
+<xs:complexType name="consultarRegistro">
+<xs:sequence/>
+</xs:complexType>
+
+<xs:complexType name="consultarRegistroResponse">
+<xs:sequence>
+<xs:element name="return" type="tns:clima" minOccurs="0" maxOccurs="unbounded"/>
+</xs:sequence>
+</xs:complexType>
+</xs:schema>
